@@ -1,0 +1,45 @@
+Inicio
+	totalunidades <- 0 */ total de unidades vale 0 /*
+	importeacumulado <- 0
+
+	Escribe CAJA DE LA TIENDA
+		Escribe "Introduce el precio unitario en euros (0 para terminar): "
+		Lee preciounitario
+			Si preciounitario < 0 Hacer
+				Escribir "El precio no puede ser negativo."
+				
+	Escribe "Introduce el número de unidades: "
+		Lee numerounidades
+			Si numerounidades <=0 Hacer */ iguales o menores de 0 /*
+				Escribir "La cantidad debe ser mayor que 0."
+				Escribir "Introduce el número de unidades:"
+				Leer numerounidades
+
+		*/ Acumular totales de la compra /*
+		totalunidades <- totalunidades + numerounidades
+        importeacumulado <- importeacumulado + (preciounitario * numerounidades)
+
+		*/ Calcular el porcentaje de descuento según el importe acumulado /*
+        Si importeacumulado < 50 Entonces
+            porcentajedescuento <- 0
+        Sino
+            Si importeacumulado < 100 Entonces
+                porcentajedescuento <- 5
+            Sino
+                porcentajedescuento <- 10
+            FinSi
+        FinSi
+
+		*/ Cálculo final /*
+		descuentoeuros <- importeacumulado * (porcentajedescuento / 100)
+        importeFinal <- importeacumulado - descuentoeuros
+
+		*/ Resumen de la compra /*
+		Escribe "RESUMEN DE LA COMPRA:"
+		Escribe "Unidades compradas: " + totalunidades
+        Escribe "Importe antes del descuento: " + importeacumulado + " €"
+        Escribe "Descuento aplicado: " + porcentajedescuento + " %"
+        Escribe "Descuento: " + descuentoeuros + " €"
+        Escribe "Importe final: " + importefinal + " €"
+
+Fin
